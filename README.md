@@ -9,5 +9,3 @@ Run the following code for a quick look:
 ```
 python GUI.py
 ```
-
-For detailed settings, refer to tips.txt.
