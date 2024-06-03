@@ -1,0 +1,21 @@
+模型训练：train.py
+    可使用模型：['MF', 'ALS', 'GMF', 'MLP', 'NeuMF', 'WideDeep', 'NCF_plus']
+        其中前六个为现有模型，NCF_plus 为自定义模型
+    可使用数据集：['movielens', 'douban']
+    load_ready_made：使用预先划分的训练集/测试集
+    load_pretrained：继续训练保存的模型
+    record_loss：使用 Tensorboard 记录 Loss
+    early_stop：Test Loss 开始上升时停止训练
+    训练时保存 Best Loss 对应的 weights
+输出推荐：predict.py
+    可调整参数：user_id，top_k，output_file，p
+        user_id = 0 是新用户测试的ID，其余为数据集内的ID
+    可使用模型：['MF', 'ALS', 'GMF', 'MLP', 'NeuMF', 'NCF_plus']
+    可使用数据集：['douban']
+    p[0]：豆瓣评分计入排序参考分的权重（高分优先）
+    p[1]：评分人数权重，对评分人数取log（热度优先）
+    p[2]：久远电影惩罚因子，log(2021-发布时间)（新发布优先）
+    p[3]：兴趣匹配优先，参考 PPT
+
+运行用户界面：python GUI.py
+测试所有功能只需要运行 GUI.py
